@@ -1,2 +1,2 @@
 #!/bin/bash
-read -r -d "" CRAWL << "EOF" Bla bla bla
+telnet towel.blinkenlights.nl
