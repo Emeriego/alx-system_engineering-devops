@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -o '[Ac]' | tr 'Ac' 'Ze'
+grep '[Ac]' | tr 'Ac' 'Ze'
