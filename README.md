@@ -1,1 +1,1 @@
-My first Shell script is here!
+This is a new directory
