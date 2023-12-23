@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script tries to stop "7-highlander" process using pkill
+
+pkill -f 7-highlander

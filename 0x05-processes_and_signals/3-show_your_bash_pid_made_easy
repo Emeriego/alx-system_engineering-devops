@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script Displys PID along with process name of processes whose name contain "bash"
+
+pgrep -l bash
