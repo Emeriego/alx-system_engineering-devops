@@ -5,15 +5,20 @@
 # with sigint it Displays Y U no love me?!
 # with sigquit it deletes and terminates itself
 
-file=/var/run/myscript.pid
-echo $$ > "$file"
+file="/var/run/myscript.pid"
 
-while true
-do
-	echo "To infinity and beyond"
-	sleep 2
+if [ ! -e "$file" ]; then
+  touch "$file"
+fi
 
-	trap 'rm $file; exit' SIGQUIT
-	trap 'echo I hate the kill command; rm $file; exit' SIGTERM
-	trap 'echo "Y U no love me?!"' SIGINT
+sleep 2 &
+
+echo "$!" > "$file"
+
+trap 'echo "I hate the kill command"; rm "$file"; exit' SIGTERM SIGQUIT
+trap "echo Y U no love me?!" SIGINT
+
+while true; do
+  echo "To infinity and beyond"
+  sleep 2
 done
