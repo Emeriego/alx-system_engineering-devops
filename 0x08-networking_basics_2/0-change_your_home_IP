@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This is a config script for  an Ubuntu server:
+# **** localhost uses 127.0.0.2
+# **** facebook.com uses 8.8.8.8
+
+cp /etc/hosts ~/hosts.changed
+echo "127.0.0.2		localhost" > ~/hosts.changed
+echo "8.8.8.8		facebook.com" >> ~/hosts.changed
+cp -f ~/hosts.changed /etc/hosts
