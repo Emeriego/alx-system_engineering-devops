@@ -1,1 +1,1 @@
-This is a new directory
+Devops, shell scripting, looping, conditionsals and parsing
