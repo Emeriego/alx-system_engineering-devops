@@ -1,0 +1,12 @@
+#!/bin/bash
+
+apt update
+apt install -y nginx
+
+# Ensure nginx is listening on port 80
+sed -i 's/.*listen\s*80.*/listen 80;/g' /etc/nginx/sites-available/default
+
+# Restart nginx without using systemctl
+kill -s HUP $(pidof nginx)
+echo "Hello World!" > /var/www/html/index.html
+
